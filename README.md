@@ -12,12 +12,12 @@ Console output and labels are in Ukrainian.
 
 | File | Topic | What it does |
 | --- | --- | --- |
-| `Scilab/1-lab_3.1.1.sce` | Graph construction | Generates the random graph and draws it in directed or undirected form; prints the directed (`A3`) and undirected (`A2`) adjacency matrices. |
-| `Scilab/2-lab.sce` | Vertex degrees | Builds and draws the graph, then computes vertex degrees, in/out semi-degrees (`δ(+)`, `δ(-)`), identifies isolated and pendant vertices, and checks whether the undirected graph is regular. |
-| `Scilab/3-lab.sce` | Paths, reachability, condensation | Computes paths of length 2 and 3 via powers of the adjacency matrix (`E^2`, `E^3`), builds the reachability matrix `R` and connectivity matrix `S`, finds strongly connected components, and draws/prints the condensation graph. |
-| `Scilab/4-lab.sce` | Depth-first traversal | Draws the directed graph, then runs a depth-first search using an explicit stack, prints the traversal order and the vertex/order correspondence matrix, and draws the resulting spanning tree. |
-| `Scilab/5-lab_1.1.sce` | Minimum spanning tree (Kruskal) | Assigns random edge weights, then builds a minimum spanning tree with Kruskal's algorithm (selecting the lightest cycle-free edge each step using matrix powers for cycle detection), animating each added edge and printing the tree's adjacency matrix. |
-| `Scilab/6-lab.sce` | Shortest paths (Dijkstra) | Assigns random edge weights and runs Dijkstra's algorithm from an automatically chosen start vertex, marking permanent vertices step by step and printing the shortest path and its total weight to every other vertex. |
+| [`Scilab/1-lab_3.1.1.sce`](Scilab/1-lab_3.1.1.sce) | Graph construction | Generates the random graph and draws it in directed or undirected form; prints the directed (`A3`) and undirected (`A2`) adjacency matrices. |
+| [`Scilab/2-lab.sce`](Scilab/2-lab.sce) | Vertex degrees | Builds and draws the graph, then computes vertex degrees, in/out semi-degrees (`δ(+)`, `δ(-)`), identifies isolated and pendant vertices, and checks whether the undirected graph is regular. |
+| [`Scilab/3-lab.sce`](Scilab/3-lab.sce) | Paths, reachability, condensation | Computes paths of length 2 and 3 via powers of the adjacency matrix (`E^2`, `E^3`), builds the reachability matrix `R` and connectivity matrix `S`, finds strongly connected components, and draws/prints the condensation graph. |
+| [`Scilab/4-lab.sce`](Scilab/4-lab.sce) | Depth-first traversal | Draws the directed graph, then runs a depth-first search using an explicit stack, prints the traversal order and the vertex/order correspondence matrix, and draws the resulting spanning tree. |
+| [`Scilab/5-lab_1.1.sce`](Scilab/5-lab_1.1.sce) | Minimum spanning tree (Kruskal) | Assigns random edge weights, then builds a minimum spanning tree with Kruskal's algorithm (selecting the lightest cycle-free edge each step using matrix powers for cycle detection), animating each added edge and printing the tree's adjacency matrix. |
+| [`Scilab/6-lab.sce`](Scilab/6-lab.sce) | Shortest paths (Dijkstra) | Assigns random edge weights and runs Dijkstra's algorithm from an automatically chosen start vertex, marking permanent vertices step by step and printing the shortest path and its total weight to every other vertex. |
 
 ## Algorithms
 

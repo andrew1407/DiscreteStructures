@@ -1,3 +1,5 @@
+# DiscreteStructures
+
 <p align="center">
   <a href="https://andrew1407.github.io/DiscreteStructures/" title="Open the labs in the browser">
     <img src="web/icon.svg" alt="Discrete Structures Labs" width="96" height="96">
@@ -5,8 +7,6 @@
 </p>
 
 [![pages](https://github.com/Andrew1407/DiscreteStructures/actions/workflows/pages.yml/badge.svg)](https://github.com/Andrew1407/DiscreteStructures/actions/workflows/pages.yml)
-
-# DiscreteStructures
 
 A set of Scilab scripts for a discrete structures course, covering graph representation, vertex degrees, path enumeration, reachability and connectivity, and classic graph traversal and optimization algorithms. Each script builds a pseudo-random graph from a fixed seed, draws it, and prints the corresponding matrices and results.
 

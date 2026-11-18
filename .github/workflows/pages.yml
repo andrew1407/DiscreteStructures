@@ -44,7 +44,7 @@ jobs:
       - name: Package site
         run: |
           mkdir -p _site
-          cp -r web/index.html web/style.css web/icon.svg web/js _site/
+          cp -r web/index.html web/style.css web/icon.svg web/theme.js web/js _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discrete Structures Labs</title>
+  <meta name="description" content="Scilab graph-theory labs ported to JavaScript: build the variant's graph, step through DFS, Kruskal and Dijkstra, and read the same console output Scilab prints.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand">
+        <h1>Discrete Structures Labs</h1>
+        <p>Six Scilab graph-theory labs, running in your browser. Same random graphs, same algorithms, same console output, in English.</p>
+      </div>
+      <a class="repo" href="https://github.com/Andrew1407/DiscreteStructures" target="_blank" rel="noopener">Source on GitHub</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Labs"></nav>
+
+    <section class="intro">
+      <div>
+        <h2 id="lab-title"></h2>
+        <p id="lab-about"></p>
+      </div>
+      <a id="lab-source" class="source" target="_blank" rel="noopener"></a>
+    </section>
+
+    <form class="controls" id="controls" autocomplete="off">
+      <fieldset class="variant">
+        <legend>Variant</legend>
+        <label>n1 <input type="number" name="n1" min="0" max="9" step="1"></label>
+        <label>n2 <input type="number" name="n2" min="0" max="9" step="1"></label>
+        <label>n3 <input type="number" name="n3" min="0" max="9" step="1"></label>
+        <label>n4 <input type="number" name="n4" min="0" max="9" step="1"></label>
+        <label title="Number of vertices. Empty = 10 + n3, as in the scripts.">vertices <input type="number" name="num" min="3" max="20" step="1" class="wide"></label>
+        <span class="meta" id="variant-meta"></span>
+      </fieldset>
+      <div class="toggles">
+        <label class="switch"><input type="checkbox" name="directed"> Draw as directed</label>
+        <label class="switch" title="Scilab draws the last vertex in the centre"><input type="checkbox" name="centre"> Last vertex in centre</label>
+        <label class="switch" id="fix-wrap"><input type="checkbox" name="fix"> <span id="fix-label"></span></label>
+        <button type="button" id="random" class="ghost">Random variant</button>
+        <button type="button" id="reset" class="ghost">Reset to 8506</button>
+      </div>
+    </form>
+
+    <div class="grid">
+      <section class="figure card">
+        <header>
+          <h3 id="stage-title"></h3>
+          <p id="stage-caption"></p>
+          <p id="stage-warning" class="warning" hidden></p>
+        </header>
+        <svg id="graph" role="img" aria-label="Graph"></svg>
+        <div class="stepper" id="stepper">
+          <button type="button" data-step="first" title="First step" aria-label="First step">⏮</button>
+          <button type="button" data-step="prev" title="Previous step (←)" aria-label="Previous step">◀</button>
+          <button type="button" data-step="play" title="Play (space)" aria-label="Play" id="play">▶ Play</button>
+          <button type="button" data-step="next" title="Next step (→)" aria-label="Next step">▶</button>
+          <button type="button" data-step="last" title="Last step" aria-label="Last step">⏭</button>
+          <input type="range" id="slider" min="0" value="0" aria-label="Step">
+          <span id="counter" class="meta"></span>
+        </div>
+        <div class="export">
+          <button type="button" id="copy-img" class="ghost">Copy image</button>
+          <button type="button" id="save-img" class="ghost">Download PNG</button>
+          <span id="export-status" class="meta" role="status"></span>
+        </div>
+      </section>
+
+      <section class="console card">
+        <header>
+          <h3>Console output</h3>
+          <label class="switch small"><input type="checkbox" id="show-all"> Show everything</label>
+        </header>
+        <div id="log" class="log" tabindex="0" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <footer class="foot">
+      <p>
+        The JS port is checked against real Scilab (<code>web/test/compare.mjs</code>):
+        for every lab and several variants it prints the same lines as the original
+        <code>.sce</code> script. The console output here is translated from the scripts’ Ukrainian into English. Scilab’s <code>rand()</code> generator is reproduced exactly, so the
+        graphs match the ones Scilab draws.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,52 @@
+name: pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    # Runs every Scilab/*.sce in real Scilab and checks the JS port prints the same output.
+    runs-on: ubuntu-latest
+    container: debian:bookworm
+    steps:
+      - name: Install Scilab and Node.js
+        run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends scilab-cli nodejs ca-certificates git
+      - uses: actions/checkout@v4
+      - name: Compare JS port with Scilab
+        env:
+          LANG: C.UTF-8
+        run: node web/test/compare.mjs
+
+  deploy:
+    needs: verify
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Package site
+        run: |
+          mkdir -p _site
+          cp -r web/index.html web/style.css web/icon.svg web/js _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

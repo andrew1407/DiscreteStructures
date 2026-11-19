@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://andrew1407.github.io/DiscreteStructures/" title="Open the labs in the browser">
-    <img src="web/icon.svg" alt="Discrete Structures Labs" width="96" height="96">
+    <img src="web/icon.svg" alt="Discrete Structures Labs" width="140" height="140">
   </a>
 </p>
 

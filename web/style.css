@@ -55,16 +55,12 @@ a { color: var(--accent); }
 button, input { font: inherit; color: inherit; }
 
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
-.top { background: var(--surface); border-bottom: 1px solid var(--border); }
-.top .wrap { display: flex; gap: 16px; align-items: center; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
-.brand-row { display: flex; gap: 14px; align-items: center; }
-.brand-row .logo { flex: none; width: 52px; height: 52px; }
-.brand h1 { font-size: 1.35rem; letter-spacing: -0.01em; }
-.brand p { margin: 4px 0 0; color: var(--muted); }
-.repo { white-space: nowrap; text-decoration: none; border: 1px solid var(--border); padding: 7px 12px; border-radius: 8px; color: var(--text); }
-.repo:hover { border-color: var(--accent); }
-.top-actions { display: flex; gap: 8px; align-items: center; }
-.top-actions .theme-toggle { margin-left: 0; }
+/* the header matches the other lab showcases: logo, title, description, theme switch */
+.top .wrap { display: flex; align-items: flex-start; gap: 14px; padding-top: 28px; }
+.top .logo { flex: none; width: 52px; height: 52px; }
+.brand { min-width: 0; }
+.brand h1 { font-size: 24px; letter-spacing: -.01em; }
+.brand p { margin: 2px 0 0; color: var(--muted); }
 
 .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 18px 0 0; }
 .tabs button {
@@ -174,7 +170,12 @@ button.ghost:hover { border-color: var(--accent); }
   .grid { grid-template-columns: minmax(0, 1fr); }
   .log { height: 420px; }
 }
+@media (max-width: 720px) {
+  .top .wrap { padding-top: 18px; }
+  .top .logo { width: 42px; height: 42px; }
+  .brand h1 { font-size: 21px; }
+}
 @media (max-width: 560px) {
-  .top .wrap, .intro { flex-direction: column; align-items: flex-start; }
+  .intro { flex-direction: column; align-items: flex-start; }
   .controls { flex-direction: column; align-items: flex-start; }
 }

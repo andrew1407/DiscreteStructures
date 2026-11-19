@@ -53,7 +53,7 @@ function buildTabs() {
     const b = document.createElement('button');
     b.type = 'button';
     b.setAttribute('role', 'tab');
-    b.innerHTML = `<span class="num">${lab.id}</span>${lab.name}`;
+    b.innerHTML = `<span class="lang" title="Scilab, ported to JavaScript">SCI</span>Lab ${lab.id}<span class="long">· ${lab.name}</span>`;
     b.addEventListener('click', () => { state.lab = i; run(); });
     tabs.append(b);
   });
